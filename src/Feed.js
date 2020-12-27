@@ -11,6 +11,7 @@ import { db } from "./Firebase";
 import firebase from "firebase"
 import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
+import FlipMove from "react-flip-move";
 
 function Feed() {
     const user = useSelector(selectUser);
@@ -58,7 +59,8 @@ function Feed() {
                     <InputOption Icon={AssignmentIcon} title="Write article" color="#7FC15E" />
                 </div>
             </div>
-            {posts.map(({ id, data: { name, description, message, photoUrl } }) => {
+            <FlipMove>
+                {posts.map(({ id, data: { name, description, message, photoUrl } }) => {
                 return (
                     <Post
                         key={id}
@@ -69,6 +71,8 @@ function Feed() {
                     />
                 );
             })}
+            </FlipMove>
+            
         </div>
     )
 }
