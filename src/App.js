@@ -20,7 +20,7 @@ function App() {
           email: userAuth.email,
           uid: userAuth.uid,
           displayName: userAuth.displayName,
-          photoUrl: userAuth.photoURL,
+          photoUrl: userAuth.photoUrl,
         }))
       }else {
         dispatch(logout());
